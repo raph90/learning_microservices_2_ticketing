@@ -2,7 +2,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t raph37/auth_test -f ./dev.Dockerfile .
+  - docker build -t raph37/auth_test -f ./auth/dev.Dockerfile ./auth
 
 script:
   - docker run raph37/auth_test
