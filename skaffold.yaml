@@ -16,3 +16,11 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: . # take where we're getting the files and just put them in our container
+    - image: raph37/learning_microservices_client-next
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "**/*.js"
+            dest: . # take where we're getting the files and just put them in our container

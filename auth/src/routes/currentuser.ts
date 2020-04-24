@@ -13,7 +13,7 @@ otherwise send back info stored in jwt
 
 */
 
-router.get("/api/users/currentuser", currentUser, requireAuth, (req, res) => {
+router.get("/api/users/currentuser", currentUser, (req, res) => {
   res.send({ currentUser: req.currentUser || null });
 });
 
