@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 function LandingPage({ currentUser }) {
+  console.log("current user", currentUser)
   axios.get("/api/users/currentuser");
   return <h1>Landing PAge</h1>;
 }
@@ -8,22 +9,16 @@ function LandingPage({ currentUser }) {
 LandingPage.getInitialProps = async () => {
   if (typeof window === "undefined") {
     // we're on the server
-    const { data } = await axios.get(
-      // ! STUCK HERE!
-      "http://172.17.0.7/api/users/currentuser",
-      {
-        headers: {
-          Host: "ticketing.dev",
-        },
-      }
+    console.log("on the server");
+    const hostHeader = { Host: "ticketing.dev" };
+    const response = await axios.get(
+      "http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/api/users/currentuser",
+      { headers: hostHeader }
     );
-    console.log(data);
-    return data;
-  } else {
-    const { data } = await axios.get("/api/users/currentuser");
+    return response.data
+    
   }
 
-  return data;
 };
 
 export default LandingPage;
