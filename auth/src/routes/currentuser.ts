@@ -1,5 +1,5 @@
-import { requireAuth } from "./../middlewares/require-auth";
-import { currentUser } from "./../middlewares/current-user";
+import { requireAuth } from "@raph37-tickets/common";
+import { currentUser } from "@raph37-tickets/common";
 import express from "express";
 import jwt from "jsonwebtoken";
 const router = express.Router();

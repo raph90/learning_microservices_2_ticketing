@@ -1,9 +1,7 @@
-import { BadRequestError } from "./../errors/bad-request-error";
-import { RequestValidationError } from "./../errors/request-validation-error";
-import { validationResult } from "express-validator";
+import { BadRequestError, validateRequest } from "@raph37-tickets/common";
+
 import express, { Request, Response } from "express";
 import { body } from "express-validator";
-import { validateRequest } from "../middlewares/validate-request";
 import { User } from "../models/User";
 import { PasswordManager } from "../helpers/PasswordManager";
 import jwt from "jsonwebtoken";

@@ -4,8 +4,8 @@ import { currentUserRouter } from "./routes/currentuser";
 import { signInRouter } from "./routes/signin";
 import { signOutRouter } from "./routes/signout";
 import { signUpRouter } from "./routes/signup";
-import { errorHandler } from "./middlewares/error-handler";
-import { NotFoundError } from "./errors/not-found-error";
+import { errorHandler, NotFoundError } from "@raph37-tickets/common";
+
 import mongoose from "mongoose";
 import cookieSession from "cookie-session";
 import "express-async-errors";

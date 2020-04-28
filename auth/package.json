@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@raph37-tickets/common": "^1.0.3",
     "@types/express": "^4.17.6",
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
